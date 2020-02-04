@@ -7,7 +7,7 @@ I created this tooling to setup and maintain a private webservice which is for m
 
 # Usage
 ## Configuration
-First copy/rename the example configuration to get the real *.conf files. Then fill out as needed. The example value should sufficiently indicate the meaning. Note, you need to conform to the Relative Distinguished Names (RDNs) system.
+First copy/rename the example configuration to get the real *.conf files. Then fill out as needed. The example value should sufficiently indicate the meaning. Note, some parameters are standardized. TODO: add reference here.
 
 ## Certificate Generation
 1. run ./ca-create which provides a new CA certificate along with the keys.
