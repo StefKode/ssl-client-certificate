@@ -41,7 +41,7 @@ Then append the following lines into your site-enabled file. Here is how I have 
 
 
 # Security considerations
-1. Openssl assignes each file the recommended file permission setting. Nevertheless I recommend to place the certs.* directories into a password protected archive. I use darkpack for that.
+1. Openssl assignes each file the recommended file permission setting. Nevertheless I recommend to place the certs.* directories into a password protected archive. I use [darkpack](https://github.com/StefKode/darkpack) for that.
 
 2. If you extend the two script files with functionality please be aware that all passwords are readable in the process environment of the script. Any child process can read them. I decided for the env:* method because its easy and the password do not appear in the process list of the computer.
 
