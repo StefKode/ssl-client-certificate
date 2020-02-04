@@ -15,7 +15,7 @@ First copy/rename the example configuration to get the real *.conf files. Then f
 
 ## Apply on NGINX
 * create a directory /etc/nginx/certs
-* chown www-data.www.data /etc/nginx/certs (not sure if necessary)
+* chown www-data.www-data /etc/nginx/certs (not sure if necessary)
 * chmod 700 /etc/nginx/certs (not sure if necessary)
 * copy the ca.pem file into this directory
 Then append the following lines into your site-enabled file. Here is how I have done it:
