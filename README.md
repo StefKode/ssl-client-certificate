@@ -38,7 +38,13 @@ Then append the following lines into your site-enabled file. Here is how I have 
   include "/etc/nginx/revproxy/*.location";
 
 ```
-
+## Apply on Android Phone
+Assuming you have Android 9 then you need to do:
+1. Settings App
+2. Search "Certificate" -> select import from SD card
+3. Select your client certificate
+4. Enter password from CLIENT_P12_PASSWORD configuration entry
+done
 
 # Security considerations
 1. Openssl assignes each file the recommended file permission setting. Nevertheless I recommend to place the certs.* directories into a password protected archive. I use [darkpack](https://github.com/StefKode/darkpack) for that.
