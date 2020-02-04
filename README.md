@@ -44,7 +44,7 @@ Assuming you have Android 9 then you need to do:
 2. Search "Certificate" -> select import from SD card
 3. Select your client certificate
 4. Enter password from CLIENT_P12_PASSWORD configuration entry
-done
+5. done
 
 # Security considerations
 1. You should chmod 600 to your *.conf files because they contain passwords.
