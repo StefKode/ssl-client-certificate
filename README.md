@@ -36,8 +36,9 @@ Then append the following lines into your site-enabled file. Here is how I have 
   client_max_body_size 20M;
   # add all reverse proxy routes here
   include "/etc/nginx/revproxy/*.location";
-
 ```
+If you want to actively handle SSL Cert Errors you can have a look at this [tutorial](https://fardog.io/blog/2017/12/30/client-side-certificate-authentication-with-nginx/).
+
 ## Apply on Android Phone
 Assuming you have Android 9 then you need to do:
 1. Settings App
