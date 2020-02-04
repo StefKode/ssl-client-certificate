@@ -1,0 +1,6 @@
+export CA_KEY_PASSWORD=super-secret-password
+export COUNTRY=DE
+export STATE=of-denial
+export LOCATION=Erlangen
+export ORG=my-very-private-club
+export DOMAIN=my-very-private-club.com

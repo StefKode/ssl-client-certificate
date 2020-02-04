@@ -1,0 +1,44 @@
+#!/bin/bash -e
+. ca.conf
+. client.conf
+
+mkdir cert.client
+chmod 700 cert.client
+cd cert.client
+
+echo "###################### CREATE CLIENT KEY #############################"
+#
+# Create the key for the client certificate
+#
+openssl genrsa -aes256 -passout env:CLIENT_KEY_PASSWORD -out client.key 4096
+
+
+echo "###################### CREATE Client Signing Request #################"
+#
+# Create Certificate Signing Request (CSR)
+#
+openssl req -new -key client.key -out client.csr \
+	-subj "/C=$COUNTRY/ST=$STATE/L=$LOCATION/O=$ORG/CN=$DOMAIN" \
+       	-passin env:CLIENT_KEY_PASSWORD 
+
+echo "###################### Issue Client Certificate ######################"
+#
+# issue using ca
+#
+openssl x509 -req -days 3650 -in client.csr \
+	-CA     ../cert.ca/ca.pem \
+	-CAkey ../cert.ca/ca.key \
+	-set_serial $SERIAL -out client.pem \
+       	-passin env:CA_KEY_PASSWORD 
+
+echo "###################### Create PKCS Client File  ######################"
+#
+# Bundle Client pem and key into installable PKCS#12 file
+#
+openssl pkcs12 -export -out client.p12 -inkey client.key -in client.pem \
+	-certfile ../cert.ca/ca.pem \
+       	-passin  env:CLIENT_KEY_PASSWORD \
+       	-passout env:CLIENT_P12_PASSWORD 
+
+# cleanup
+rm -f client.csr

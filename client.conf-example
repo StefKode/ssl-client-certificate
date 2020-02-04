@@ -1,0 +1,8 @@
+export CLIENT_KEY_PASSWORD=you-never-guess-this-super-strength-password
+export CLIENT_P12_PASSWORD=i-need-to-type-this-into-every-client-device
+export COUNTRY=DE
+export STATE=BY
+export LOCATION=Erlangen
+export ORG=my-very-private-club
+export DOMAIN=my-very-private-club.com
+export SERIAL=01

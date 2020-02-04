@@ -1,0 +1,26 @@
+#!/bin/bash -e
+. ca.conf
+
+mkdir cert.ca
+chmod 700 cert.ca
+cd cert.ca
+
+echo "###################### CREATE CA MASTER KEY ##########################"
+#
+# Create the master key for the CA
+#
+openssl genrsa -aes256 -passout env:CA_KEY_PASSWORD -out ca.key 4096
+
+echo "###################### CREATE CA CERTIFICATE #########################"
+#
+# Create CA Certificate
+#
+openssl req -new -x509 -days 3650 -key ca.key -out ca.pem \
+	-subj "/C=$COUNTRY/ST=$STATE/L=$LOCATION/O=$ORG/CN=$DOMAIN" \
+	-passin env:CA_KEY_PASSWORD 
+
+#
+# you can view it:
+# openssl x509 -in ca.pem -noout -text
+#
+
