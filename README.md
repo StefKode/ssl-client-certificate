@@ -51,7 +51,7 @@ done
 
 2. Openssl assignes each file the recommended file permission setting. Nevertheless I recommend to place the certs.* directories into a password protected archive. I use [darkpack](https://github.com/StefKode/darkpack) for that.
 
-3. If you extend the two script files with functionality please be aware that all passwords are readable in the process environment of the script. Any child process can read them. I decided for the env:* method because its easy and the passwords do not appear in the process list of the computer.
+3. If you extend the two script files with functionality please be aware that all passwords are readable in the process environment of the script. Any child process can read them too. I decided for the env:* method because its easy and the passwords do not appear in the process list of the computer.
 
 For any feedback please open a ticket.
 
