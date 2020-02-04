@@ -1,7 +1,7 @@
 # Crypto Setup for using Client Side Certificates
 
 # Use Case
-I created this tooling to setup and maintain a webservice with is private for my family only. The workflow produces the following relevant files:
+I created this tooling to setup and maintain a private webservice which is for my family only. The workflow produces the following relevant files:
 * certs.ca/ca.pem: this is the server CA certificate
 * certs.client/client.p12: this is the client certificate
 
@@ -19,5 +19,6 @@ First copy/rename the example configuration to get the real *.conf files. Then f
 2. If you extend the two script files with functionality please be aware that all passwords are readable in the process environment of the script. Any child process can read them. I decided for the env:* method because its easy and the password do not appear in the process list of the computer.
 
 For any feedback please open a ticket.
+
 Stefan
 
